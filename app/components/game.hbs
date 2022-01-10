@@ -1,0 +1,9 @@
+<table class="game-grid">
+    {{#each this.gameLetters as |row rowIndex|}}
+        <tr>
+            {{#each row as |col colIndex|}}
+                <GameCell @value={{col.value}} @selected={{col.selected}} @selectAction={{this.selectCell}} @row={{rowIndex}} @column={{colIndex}}/>
+            {{/each}}
+        </tr>
+    {{/each}}
+</table>
