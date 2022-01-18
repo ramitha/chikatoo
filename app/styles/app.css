@@ -1,0 +1,173 @@
+.game {
+    margin-top: 24px;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+}
+.game-grid {
+    font-size: 14px;
+    margin: 24px auto 24px auto;
+    background: white;
+}
+
+.game-heading-hightlight {
+    background-color: #FFF7A6;
+    height: 10px;
+}
+.game-heading {
+    font-size: 32px;
+    color: black;
+    padding: 24px;
+    border-bottom: 1px solid #dadce0;
+}
+
+.game-rules {
+    padding: 24px;
+    border-bottom: 1px solid #dadce0;
+}
+
+.game-cell {
+    height: 32px;
+    width: 32px;
+    text-align: center;
+}
+
+.boy-selected {
+    background: #BFF2FE80;
+}
+
+.girl-selected {
+    background: #FFD9E780;
+}
+
+#balloon-container {
+    height: 100vh;
+    padding: 1em;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    position: fixed;
+    z-index: -1;
+  }
+  
+  .balloon {
+    height: 125px;
+    width: 105px;
+    border-radius: 75% 75% 70% 70%;
+    position: relative;
+  }
+  
+  .balloon:before {
+    content: "";
+    height: 75px;
+    width: 1px;
+    padding: 1px;
+    background-color: #FDFD96;
+    display: block;
+    position: absolute;
+    top: 125px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  
+  .balloon:after {
+      content: "▲";
+      text-align: center;
+      display: block;
+      position: absolute;
+      color: inherit;
+      top: 120px;
+      left: 0;
+      right: 0;
+      margin: auto;
+  }
+  
+  @keyframes float {
+    from {transform: translateY(100vh);
+    opacity: 1;}
+    to {transform: translateY(-300vh);
+    opacity: 0;}
+  }
+
+body {
+    font: 400 15px/1.8 Lato, sans-serif;
+    background: white;
+    color: #B3AE7D
+  }
+  
+  .navbar {
+    font-family: Montserrat, sans-serif;
+  }
+
+.carousel-inner img {
+    /* -webkit-filter: grayscale(90%); */
+    /* filter: grayscale(90%); make all photos black and white */
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+  }
+  
+  .carousel-caption {
+    color: black !important;
+  }
+  
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+    .game-cell {
+        line-height: 18px;
+        height: 18px;
+        width: 18px;
+        text-align: center;
+    }
+  }
+  
+
+
+  /* Add a dark background color with a little bit see-through */
+.navbar {
+    margin-bottom: 0;
+    background-color: #74A7B3;
+    border: 0;
+    font-size: 14px !important;
+    letter-spacing: 4px;
+    opacity: 0.9;
+  }
+  
+  /* Add a gray color to all navbar links */
+  .navbar li a, .navbar .navbar-brand {
+    color: #FFF7A6 !important;
+  }
+  
+  /* On hover, the links will turn white */
+  .navbar-nav li a:hover {
+    color: #fff !important;
+  }
+  
+  /* The active link */
+  .navbar-nav li.active a {
+    color: #fff !important;
+    background-color:#29292c !important;
+  }
+  
+  /* Remove border color from the collapsible button */
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+  }
+  
+  /* Dropdown */
+  .open .dropdown-toggle {
+    color: #fff ;
+    background-color: #555 !important;
+  }
+  
+  /* Dropdown links */
+  .dropdown-menu li a {
+    color: #000 !important;
+  }
+  
+  /* On hover, the dropdown links will turn red */
+  .dropdown-menu li a:hover {
+    background-color: red !important;
+  }
