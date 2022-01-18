@@ -1,8 +1,12 @@
+<div class="game-status">
+    {{#if this.gameOver}}GAME OVER!!{{else}} GAME NOT OVER{{/if}}
+</div>
+
 <table class="game-grid">
-    {{#each this.gameLetters as |row rowIndex|}}
+    {{#each this.game as |row rowIndex|}}
         <tr>
-            {{#each row as |col colIndex|}}
-                <GameCell @value={{col.value}} @selected={{col.selected}} @selectAction={{this.selectCell}} @row={{rowIndex}} @column={{colIndex}}/>
+            {{#each row as |item colIndex|}}
+                <GameCell @value={{item.value}} @isBoySelectable={{item.isBoySelectable}} @isGirlSelectable={{item.isGirlSelectable}} @selected={{item.selected}} @selectStart={{this.selectStart}} @selecting={{this.selecting}} @selectStop={{this.selectStop}} @row={{rowIndex}} @column={{colIndex}}/>
             {{/each}}
         </tr>
     {{/each}}

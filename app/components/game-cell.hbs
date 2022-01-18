@@ -1,1 +1,1 @@
-<td {{on "click" (fn @selectAction @row @column)}}>{{@value}}: {{@selected}}</td>
+<td class="game-cell {{if this.isBoySelected "boy-selected"}} {{if this.isGirlSelected "girl-selected"}}" {{on "mousedown" (fn @selectStart @row @column)}} {{on "mouseenter" (fn @selecting @row @column)}} {{on "mouseup" (fn @selectStop @row @column)}}>{{@value}}</td>
