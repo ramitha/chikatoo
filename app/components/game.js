@@ -1,6 +1,5 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { TrackedArray } from 'tracked-built-ins';
 import { action, set } from '@ember/object';
 
 const gameLetters = [
@@ -82,6 +81,10 @@ export default class GameCellComponent extends Component {
 
     @tracked gameOver = false;
 
+    get gameOverClass() {
+        return this.gameOver ? 'victory' : '';
+    }
+
     @action
     validateGame() {
         for (let row of this.game) {
@@ -97,7 +100,7 @@ export default class GameCellComponent extends Component {
 
     @action
     selectCell(row, column) {
-        console.log('select cell called');
+        // console.log('select cell called');
         set(this.game[row][column], 'selected', !this.game[row][column].selected);
         this.validateGame();
     }
