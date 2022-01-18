@@ -1,13 +1,28 @@
 <div class="game-status">
     {{#if this.gameOver}}GAME OVER!!{{else}} GAME NOT OVER{{/if}}
+</div> 
+
+<div id="home" class="game">
+    <div class="game-heading-hightlight"></div>
+    <div class="game-heading">
+        Is it a Boy or Girl? Find out Chikatoo's Gender!
+    </div>
+    <div class="game-rules">
+    Rules:
+    <ul>
+        <li>Words can be written in any way - horizontal, vertical, reverse-horizontal or reverse-vertical</li>
+        <li>Find all instances of `BOY` and `GIRL`</li>
+        <li>Count the majority to know the gender of the baby</li>
+    </ul>
+    </div>
+    <table class="text-center game-grid">
+        {{#each this.game as |row rowIndex|}}
+            <tr>
+                {{#each row as |item colIndex|}}
+                    <GameCell @value={{item.value}} @isBoySelectable={{item.isBoySelectable}} @isGirlSelectable={{item.isGirlSelectable}} @selected={{item.selected}} @selectStart={{this.selectStart}} @selecting={{this.selecting}} @selectStop={{this.selectStop}} @row={{rowIndex}} @column={{colIndex}}/>
+                {{/each}}
+            </tr>
+        {{/each}}
+    </table>
 </div>
 
-<table class="game-grid">
-    {{#each this.game as |row rowIndex|}}
-        <tr>
-            {{#each row as |item colIndex|}}
-                <GameCell @value={{item.value}} @isBoySelectable={{item.isBoySelectable}} @isGirlSelectable={{item.isGirlSelectable}} @selected={{item.selected}} @selectStart={{this.selectStart}} @selecting={{this.selecting}} @selectStop={{this.selectStop}} @row={{rowIndex}} @column={{colIndex}}/>
-            {{/each}}
-        </tr>
-    {{/each}}
-</table>

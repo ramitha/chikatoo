@@ -63,7 +63,6 @@ const girlCells = [
 
 
 export default class GameCellComponent extends Component {
-
     constructor(owner, args) {
         super(owner, args);
         this.game = new Array();
@@ -77,8 +76,8 @@ export default class GameCellComponent extends Component {
             }
             this.game[row] = rowArray;
         }
-        console.log(this.game)
     }
+    
     @tracked beginSelecting = false;
 
     @tracked gameOver = false;
